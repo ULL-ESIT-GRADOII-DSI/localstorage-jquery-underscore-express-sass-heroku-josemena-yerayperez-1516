@@ -10,7 +10,7 @@ For more information look at:
 * See it working at [CSV en GitHub Pages](http://crguezl.github.io/csv/)
 * See also [CSV](http://en.wikipedia.org/wiki/Comma-separated_values) at Wikipedia.
 
-** Descripción de la práctica **
+**Descripción de la práctica**
 
 *  [_Enlace a la descripción_](https://casianorodriguezleon.gitbooks.io/pl1516/content/practicas/csv.html)
 *  [_Campus Virtual de la Asignatura_](https://campusvirtual.ull.es/1516/course/view.php?id=144)
