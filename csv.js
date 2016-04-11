@@ -30,8 +30,6 @@
         r.push({value: errmsg.split("").splice(commonLength), rowClass: 'error'});
       }
     }
-    console.log("r dentro de csv: " + r[0].value);
-    console.log("r dentro de csv: " + r[0].rowClass);
     return r;
   };
 })(this);

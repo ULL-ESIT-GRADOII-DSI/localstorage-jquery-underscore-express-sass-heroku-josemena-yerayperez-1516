@@ -27,6 +27,8 @@ app.set('port', (process.env.PORT || 8080));
 
 var bodyParser = require('body-parser')
 app.use(bodyParser.urlencoded({ extended: false }));
+
+
 app.get('/', function(req, res){
   res.render('index', { tittle: "Comma Separated Value Analyzer", error:""});
 });
@@ -41,7 +43,7 @@ app.post('/table', function(req, res, next){
       data._ = _;
       res.render('table', {items: data, tittle: "Comma Separated Value Analyzer", error:""});
     }
-    });
+});
 
 app.listen(app.get('port'), function() {
   console.log("Node app is running at localhost:" + app.get('port'));
