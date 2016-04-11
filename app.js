@@ -1,7 +1,7 @@
 var express = require('express')
 var app = express()
 var csv = require('./csv.js')
-var _ = require("underscore")
+var util = require('util')
 
 var path = require('path');
 
@@ -11,7 +11,7 @@ app.set('view engine', 'ejs');
 var expressLayouts = require('express-ejs-layouts');
 app.set('layout', 'layout');
 
-app.use(express.static('.'));
+app.use(express.static('public'));
 app.use(expressLayouts);
 
 app.set('port', (process.env.PORT || 8080)); 
@@ -30,18 +30,16 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 
 app.get('/', function(req, res){
-  res.render('index', { tittle: "Comma Separated Value Analyzer", error:""});
+  res.render('index', { title: "Comma Separated Value Analyzer", error:""});
 });
 
 app.post('/table', function(req, res, next){
     var original = req.body.original;
     if(!original){ 
-      res.render('index', { tittle: "Comma Separated Value Analyzer", error: "Introduzca datos de entrada, por favor"});
+      res.render('index', { title: "Comma Separated Value Analyzer", error: "Introduzca datos de entrada, por favor"});
     }else{
-      var data = {};
-      data.result = csv.calculate(original);
-      data._ = _;
-      res.render('table', {items: data, tittle: "Comma Separated Value Analyzer", error:""});
+      var data = csv.calculate(original);
+      res.render('table', {items: data, title: "Comma Separated Value Analyzer", error:"", util: util});
     }
 });
 

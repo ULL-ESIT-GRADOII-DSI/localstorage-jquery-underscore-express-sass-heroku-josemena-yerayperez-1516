@@ -3,11 +3,11 @@
 main = function() {
   var original = document.getElementById("original").value;
   if (window.localStorage) localStorage.original = original;
-  var r = calculate(original);
+  //var r = calculate(original);
 //  var template = fillTable.innerHTML;
 //  finaltable.innerHTML = _.template(template, {items: r});
 
-  return r;
+  //return r;
 };
 
 $(document).ready(function () {
