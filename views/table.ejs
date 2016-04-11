@@ -1,0 +1,11 @@
+<h4>Resultado:</h4>
+<table id="result" class="center">
+    <% items._.each(items.result, function(name, index) { %>
+        <tr class="<%= name.rowClass %>">
+            <% items._.each(items.result[index].value, function(cell, index) { %>
+                <td><%= cell %></td>
+            <% }); %>
+        </tr>
+    <% }); %>
+</table>
+<a href="/">Atras</a>
