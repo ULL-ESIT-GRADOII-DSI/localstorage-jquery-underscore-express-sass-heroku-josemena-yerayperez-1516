@@ -39,7 +39,7 @@ app.post('/table', function(req, res, next){
       res.render('index', { title: "Comma Separated Value Analyzer", error: "Introduzca datos de entrada, por favor"});
     }else{
       var data = csv.calculate(original);
-      res.render('table', {items: data, title: "Comma Separated Value Analyzer", error:"", util: util});
+      res.render('table', {items: data, title: "Comma Separated Value Analyzer", error:""});
     }
 });
 
