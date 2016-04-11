@@ -1,9 +1,15 @@
-(function(exports) {
-  "use strict"; // Use ECMAScript 5 strict mode in browsers that support it
-  // See http://en.wikipedia.org/wiki/Comma-separated_values
+"use strict";
 
-  var regexp = /"((?:[^"\\]|\\.)*)"|([^,\s]+)|,\s*(?=,|$)|^\s*,/g
-  exports.calculate = function(original) {
+var regexp = /"((?:[^"\\]|\\.)*)"|([^,\s]+)|,\s*(?=,|$)|^\s*,/g
+module.exports.calculate = function(original) {
+  //   var original = document.getElementById("original").value;
+  // if (window.localStorage) localStorage.original = original;
+  // $(document).ready(function () {
+  // // If the browser supports localStorage and we have some stored data
+  // if (window.localStorage && localStorage.original) {
+  //   original.value = localStorage.original;
+  // }
+  // });
     var lines = original.split(/\n+\s*/);
     var commonLength = lines[0].match(regexp).length;
     var r = [];
@@ -14,14 +20,11 @@
       var removeescapedquotes = removelastquote.replace(/\\"/, '"');
       return removeescapedquotes;
     };
-
     for (var t in lines) {
       var temp = lines[t];
       var m = temp.match(regexp);
       var result = [];
       var error = false;
-
-      // skip empty lines and comments
       if (temp.match(/(^\s*$)|(^#.*)/)) continue; 
       if (m) {
         result = m.map(removeQuotes);
@@ -36,5 +39,4 @@
     }
     return r;
   };
-})(this);
 

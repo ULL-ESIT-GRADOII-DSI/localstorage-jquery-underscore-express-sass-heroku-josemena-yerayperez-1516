@@ -1,0 +1,18 @@
+<div>
+    <h1><%- title %></h1>
+    <div>
+      <p align="center"><i> Enlace al <a href="https://github.com/alu0100768893/localstorage-jquery-underscore-express-sass-heroku-josemena-yerayperez-1516">repo</a> de la práctica.</i></p>
+      <p align="center"><i>Escriba una cadena en formato CSV, haga click sobre el boton "Tabla" y el programa mostrará una tabla con los datos de entrada.</i></p>
+      <br><br>
+    </div>
+    <form action="/table" method="post">
+       Cadena CSV:
+       <br>
+       <textarea autofocus name="original" cols="80" rows="5" id="original"></textarea>
+       <br/>
+       <p><%- error %></p>
+       <br>
+       <button name="button" id="button" type="submit">Tabla</button>
+    </form>
+    
+</div>

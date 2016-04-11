@@ -1,0 +1,25 @@
+{
+  "name": "hello",
+  "version": "0.0.0",
+  "main": "hello.js",
+  "dependencies": {
+    "express": "*",
+    "ejs": "*",
+    "body-parser": "~1.12.2",
+    "express-ejs-layouts": "~2.0.0"
+  },
+  "devDependencies": {
+    "underscore": "^1.8.3",
+    "underscore-express": "^1.0.1"
+  },
+  "scripts": {
+    "test": "node app.js",
+     "start": "node app.js",
+    "view": "open http://localhost:8080/"
+  },
+    "engines": {
+    "node": "0.12.7"
+  },
+  "author": "",
+  "license": "ISC"
+}
